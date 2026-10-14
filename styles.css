@@ -266,11 +266,9 @@ html[dir="rtl"] .stats > div{padding-inline-start:0;padding-inline-end:0}
 .call-card:hover,.call-card:focus-visible{transform:translateY(-4px);box-shadow:0 40px 80px -30px rgba(0,0,0,.6),0 0 0 2px var(--accent)}
 .call-card:hover img{transform:scale(1.015)}
 .call-card-hint{
-  position:absolute;inset-inline-end:14px;bottom:14px;padding:8px 16px;border-radius:999px;
-  background:color-mix(in srgb,var(--panel) 62%,transparent);
-  backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6);
-  border:1px solid color-mix(in srgb,var(--ink) 16%,transparent);
-  font-size:.86rem;font-weight:700;color:var(--ink);
+  display:block;padding:14px 16px;text-align:center;
+  border-top:1px solid var(--line);
+  font-size:.95rem;font-weight:700;color:var(--ink);
 }
 @media (hover:none) and (pointer:coarse){
   .call-card:hover{transform:none;box-shadow:0 30px 60px -32px rgba(0,0,0,.55)}
