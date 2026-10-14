@@ -1,0 +1,18 @@
+{
+  "name": "Alireza HA — Web, PWA & AI Agent Developer",
+  "short_name": "Alireza.dev",
+  "description": "Web, PWA and AI agent development. Deployed products, not mockups.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f5f3ee",
+  "theme_color": "#f5f3ee",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "portfolio"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
