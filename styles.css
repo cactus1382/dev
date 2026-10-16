@@ -496,3 +496,5 @@ html[lang="fa"] .consent-q{font-family:var(--font-body);letter-spacing:0}
 @media (min-width:1021px){
   .hero-foot{grid-template-columns:minmax(0,1fr) auto;}
 }
+
+#callme{scroll-margin-top:90px}

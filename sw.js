@@ -1,4 +1,4 @@
-const CACHE = "ali-dev-v5-4";
+const CACHE = "ali-dev-v5-5";
 const SCOPE_PATH = new URL("./", self.location).pathname;
 
 const PRECACHE = [
