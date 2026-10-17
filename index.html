@@ -1,383 +1,512 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0b0c10" />
-  <meta name="description" content="Alireza HA — web, PWA and AI agent developer. I ship deployed products, not mockups. Mashhad, Iran · Remote worldwide." />
-  <link rel="canonical" href="https://homefoodpro.ir/dev/" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Alireza HA — Full-stack developer for web apps, PWAs and AI agents</title>
+  <meta name="description" content="Alireza HA designs, builds and runs web apps, installable PWAs, AI chat agents and Telegram bots. Solo full-stack developer in Mashhad, Iran — working remotely worldwide in Persian, English and Arabic.">
+  <meta name="author" content="Alireza HA">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f6fa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1126" media="(prefers-color-scheme: dark)">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://homefoodpro.ir/dev/">
+  <link rel="alternate" hreflang="en" href="https://homefoodpro.ir/dev/">
+  <link rel="alternate" hreflang="fa" href="https://homefoodpro.ir/dev/?lang=fa">
+  <link rel="alternate" hreflang="x-default" href="https://homefoodpro.ir/dev/">
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://homefoodpro.ir/dev/" />
-  <meta property="og:title" content="Alireza HA — Web, PWA & AI Agent Developer" />
-  <meta property="og:description" content="Ideas shipped as working products — websites, PWAs and AI agents." />
-  <meta property="og:image" content="https://homefoodpro.ir/dev/og.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="Alireza HA" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Alireza HA — Web, PWA & AI Agent Developer" />
-  <meta name="twitter:description" content="Ideas shipped as working products — websites, PWAs and AI agents." />
-  <meta name="twitter:image" content="https://homefoodpro.ir/dev/og.png" />
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://homefoodpro.ir/dev/">
+  <meta property="og:site_name" content="Alireza HA">
+  <meta property="og:title" content="Alireza HA — I build products people use every day">
+  <meta property="og:description" content="Web apps, PWAs, AI agents and Telegram bots — designed, built and run by one full-stack developer.">
+  <meta property="og:image" content="https://homefoodpro.ir/dev/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Alireza HA — full-stack developer">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fa_IR">
+  <meta property="profile:first_name" content="Alireza">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alireza HA — I build products people use every day">
+  <meta name="twitter:description" content="Web apps, PWAs, AI agents and Telegram bots — designed, built and run by one full-stack developer.">
+  <meta name="twitter:image" content="https://homefoodpro.ir/dev/og.png">
 
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="icon-192.png" />
-  <link rel="preconnect" href="https://homefoodpro.ir" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>Alireza HA — Web, PWA & AI Agent Developer</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="preload" href="fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/vazirmatn-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
   <script>
-    (function(){
-      var d = document.documentElement;
-      d.className += " anim";
-      try{
-        var t = localStorage.getItem("ali.theme");
-        if(t !== "light" && t !== "dark"){
-          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
-        if(t === "dark") d.classList.add("dark");
-      }catch(e){}
+    (function () {
+      var d = document.documentElement, t, l;
+      try { t = localStorage.getItem("ali.theme"); l = localStorage.getItem("ali.lang"); } catch (e) {}
+      var q = /[?&]lang=(fa|en)/.exec(location.search);
+      if (q) l = q[1];
+      if (!l) l = /^fa\b/i.test(navigator.language || "") ? "fa" : "en";
+      if (l === "fa") { d.lang = "fa"; d.dir = "rtl"; }
+      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      d.dataset.theme = t;
     })();
   </script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Alireza HA",
-    "jobTitle": "Web, PWA & AI Agent Developer",
-    "url": "https://homefoodpro.ir/dev/",
-    "email": "alimb5554@gmail.com",
-    "telephone": "+989907470846",
-    "address": { "@type": "PostalAddress", "addressLocality": "Mashhad", "addressCountry": "IR" },
-    "knowsAbout": ["Progressive Web Apps", "React", "Node.js", "Python", "n8n", "AI agents", "Chatbots", "Telegram bots"],
-    "sameAs": ["https://linkedin.com/in/alirha82", "https://t.me/alirha82"],
-    "worksFor": { "@type": "Organization", "name": "HomeFoodPro", "url": "https://homefoodpro.ir" }
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://homefoodpro.ir/dev/#person",
+        "name": "Alireza HA",
+        "alternateName": "علیرضا",
+        "jobTitle": "Full-stack developer — web apps, PWAs and AI agents",
+        "url": "https://homefoodpro.ir/dev/",
+        "image": "https://homefoodpro.ir/dev/og.png",
+        "email": "mailto:alimb5554@gmail.com",
+        "telephone": "+989907470846",
+        "address": { "@type": "PostalAddress", "addressLocality": "Mashhad", "addressCountry": "IR" },
+        "knowsLanguage": ["fa", "en", "ar"],
+        "knowsAbout": ["Progressive Web Apps", "React", "Node.js", "Express", "SQLite", "Python", "n8n", "AI agents", "Chatbots", "Telegram bots", "Capacitor", "Technical SEO"],
+        "sameAs": ["https://linkedin.com/in/alirha82", "https://t.me/alirha82", "https://github.com/cactus1382"],
+        "founder": { "@id": "https://homefoodpro.ir/#organization" }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://homefoodpro.ir/dev/#service",
+        "name": "Alireza HA — product development",
+        "url": "https://homefoodpro.ir/dev/",
+        "provider": { "@id": "https://homefoodpro.ir/dev/#person" },
+        "areaServed": "Worldwide",
+        "availableLanguage": ["Persian", "English", "Arabic"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website design and development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Progressive Web App development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI agents and chatbots" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Telegram bots and automation" } }
+          ]
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://homefoodpro.ir/#organization",
+        "name": "HomeFoodPro",
+        "url": "https://homefoodpro.ir"
+      }
+    ]
   }
   </script>
 </head>
 <body>
-  <div class="progress" id="progress" aria-hidden="true"></div>
   <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
-  <header class="nav" id="top">
+  <header class="nav" id="nav">
     <div class="wrap nav-in">
-      <a class="brand" href="#top" aria-label="Alireza HA">
-        <span class="brand-dot" aria-hidden="true"></span>
+      <a class="brand" href="#top" aria-label="Alireza HA — top of page">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="9" fill="var(--lapis)"/><path d="M9 22 15 9h2l6 13h-3.2l-1.3-3h-5l-1.3 3zm5.6-5.6h3.1L16.2 12.6z" fill="#fff"/></svg>
         <span class="brand-name">Alireza HA</span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#services" data-i18n="nav.services">Services</a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="#work" data-i18n="nav.work">Work</a>
-        <a href="#gallery" data-i18n="nav.gallery">Screenshots</a>
-        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#log" data-i18n="nav.log">Shipping log</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#process" data-i18n="nav.process">Process</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="https://homefoodpro.ir/dev/shop" data-i18n="nav.shop">Shop</a>
       </nav>
       <div class="nav-actions">
-        <button id="themeBtn" class="icon-btn" data-i18n-aria="theme.toDark" aria-label="Switch to dark mode" aria-pressed="false">
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg>
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <button class="icon-btn" id="langBtn" type="button" lang="fa" aria-label="فارسی">فا</button>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch theme" data-i18n-aria="a11y.theme">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6z"/></svg>
         </button>
-        <button id="langBtn" class="lang-btn" data-i18n-aria="a11y.lang" aria-label="Switch language">فارسی</button>
-        <button id="installBtn" class="nav-cta" hidden data-i18n="nav.install">Install app</button>
-        <a class="nav-cta" href="https://t.me/alirha82" target="_blank" rel="noopener" data-i18n="nav.telegram">Telegram</a>
+        <a class="btn btn-ink btn-sm nav-cta" href="#contact" data-i18n="nav.cta">Start a project</a>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu" data-i18n-aria="a11y.menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+        </button>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="wrap">
-        <div class="hero-glass reveal">
-          <p class="hero-kicker" data-i18n="hero.eyebrow">AI-assisted developer · Web · PWA · AI agents</p>
-          <h1 id="heroTitle" class="hero-title" data-i18n="hero.title">Ideas shipped as <span class="grad">working products</span> — websites, PWAs and AI agents.</h1>
-          <div class="hero-foot">
-            <p class="hero-lead" data-i18n="hero.lede">I take a business problem and deliver a deployed product: multi-platform web apps, installable PWAs, and AI chatbots/agents. Based in Mashhad, working remotely worldwide.</p>
-            <div class="hero-cta">
-              <button class="btn btn-primary btn-xl" id="startProjectBtn" data-i18n="hero.cta.primary">Start your project</button>
-              <a class="btn btn-line" href="#work" data-i18n="hero.cta.secondary">See my work</a>
-            </div>
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="status"><span class="pulse" aria-hidden="true"></span><span data-i18n="hero.status">Open to new projects — replies within a day</span></p>
+          <h1 id="heroTitle" class="hero-title" data-i18n="hero.title">I build products people use every day — and keep them running.</h1>
+          <p class="hero-lede" data-i18n="hero.lede">I'm Alireza, a full-stack developer in Mashhad. I design, build and deploy web apps, installable PWAs, AI chat agents and Telegram bots — one person from the first sketch to the live server.</p>
+          <div class="hero-cta">
+            <a class="btn btn-lapis btn-lg" href="#contact" data-i18n="hero.cta1">Start a project</a>
+            <a class="btn btn-line btn-lg" href="#work" data-i18n="hero.cta2">See the work</a>
           </div>
+          <ul class="proof" aria-label="At a glance">
+            <li><strong>102</strong><span data-i18n="proof.commits">commits shipped to HomeFoodPro in 24 days</span></li>
+            <li><strong>3</strong><span data-i18n="proof.platforms">platforms from one codebase: web, PWA, Android</span></li>
+            <li><strong lang="fa" class="fa-num">فا · En · ع</strong><span data-i18n="proof.langs">interfaces in Persian, English and Arabic</span></li>
+          </ul>
         </div>
-        <div class="shop-cta reveal">
-          <a class="shop-btn" href="https://homefoodpro.ir/dev/shop" target="_blank" rel="noopener">
-            <span class="shop-btn-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
-            </span>
-            <span class="shop-btn-label" data-i18n="shop.label">ورود به فروشگاه</span>
-            <span class="shop-btn-arrow" aria-hidden="true">←</span>
+
+        <div class="stage" aria-label="HomeFoodPro on two phones, with the latest releases">
+          <figure class="phone phone-a">
+            <img src="img/homefood-home.webp" width="455" height="944" alt="HomeFoodPro home screen: home cooks and shops near you on a map" data-i18n-alt="alt.home" fetchpriority="high">
+          </figure>
+          <figure class="phone phone-b">
+            <img src="img/homefood-track.webp" width="465" height="945" alt="HomeFoodPro live order tracking screen" data-i18n-alt="alt.track">
+          </figure>
+          <a class="ticket" href="#log" aria-label="Latest releases — open the shipping log" data-i18n-aria="ticket.aria">
+            <span class="ticket-head"><span class="ticket-dot" aria-hidden="true"></span><span data-i18n="ticket.title">Live on homefoodpro.ir</span></span>
+            <ol class="ticket-list" id="ticketList">
+              <li><time datetime="2026-10-17" data-i18n="d.oct17">Oct 17</time><span data-i18n="t.1">New homepage + animated theme switch</span></li>
+              <li><time datetime="2026-10-15" data-i18n="d.oct15">Oct 15</time><span data-i18n="t.2">Daily payouts for every cook</span></li>
+              <li><time datetime="2026-10-15" data-i18n="d.oct15">Oct 15</time><span data-i18n="t.3">Native Android push notifications</span></li>
+            </ol>
           </a>
-          <p class="shop-note" data-i18n="shop.note">قالب‌ها، کیت‌ها و ابزارهای آماده‌ای که خودم ساختم — بدون واسطه، همین حالا قابل دانلود و استفاده.</p>
         </div>
-      </div>
-
-      <div class="rail reveal" aria-label="Product screenshots">
-        <figure class="rail-item clickable" data-popup="shot-a" tabindex="0" role="button">
-          <img src="img/homefood-home.png" alt="HomeFoodPro home page" loading="eager" data-i18n-alt="gallery.a" />
-          <figcaption data-i18n="gallery.a">HomeFoodPro — discovering home cooks near you</figcaption>
-        </figure>
-        <figure class="rail-item clickable" id="heroCard" data-popup="shot-b" tabindex="0" role="button">
-          <img src="img/homefood-track.png" alt="HomeFoodPro live order tracking" loading="eager" data-i18n-alt="gallery.b" />
-          <figcaption data-i18n="gallery.b">Real-time order tracking with live status</figcaption>
-        </figure>
-        <figure class="rail-item clickable" data-popup="shot-c" tabindex="0" role="button">
-          <img src="img/ghablamoore.png" alt="Ghablamoore chat mascot widget" loading="eager" data-i18n-alt="gallery.c" />
-          <figcaption data-i18n="gallery.c">Ghablamoore — AI chat mascot on any site</figcaption>
-        </figure>
-        <figure class="rail-item clickable" data-popup="shot-d" tabindex="0" role="button">
-          <img src="img/clue.png" alt="CLUE Specialty Coffee bilingual site" loading="eager" data-i18n-alt="gallery.d" />
-          <figcaption data-i18n="gallery.d">CLUE Specialty Coffee — bilingual Arabic-RTL</figcaption>
-        </figure>
-      </div>
-
-      <dl class="wrap stats">
-        <div class="reveal"><dd data-count="15" data-suffix="+">15+</dd><dt data-i18n="hero.stats.projects">Projects shipped</dt></div>
-        <div class="reveal"><dd data-count="3" data-suffix="">3</dd><dt data-i18n="hero.stats.platforms">Platforms per app</dt></div>
-        <div class="reveal"><dd>FA·EN·AR</dd><dt data-i18n="hero.stats.langs">Languages · FA/EN/AR</dt></div>
-      </dl>
-    </section>
-
-    <section id="services" class="section wrap">
-      <header class="sec-head reveal">
-        <h2 data-i18n="services.title">What I do</h2>
-        <p data-i18n="services.sub">Four focused services, one goal: a digital product that actually runs your business.</p>
-      </header>
-      <div class="svc-list">
-        <article class="svc-row clickable reveal" data-popup="web" tabindex="0" role="button">
-          <h3 data-i18n="services.web.title">Website design &amp; development</h3>
-          <p data-i18n="services.web.body">WordPress or custom-coded, responsive and SEO-ready. Bilingual RTL/LTR sites, theme customization, speed fixes and redesigns for small businesses.</p>
-          <ul class="tags"><li>WordPress</li><li>Responsive</li><li>SEO</li><li>RTL</li></ul>
-        </article>
-        <article class="svc-row clickable reveal" data-popup="pwa" tabindex="0" role="button">
-          <h3 data-i18n="services.pwa.title">PWA development</h3>
-          <p data-i18n="services.pwa.body">Installable, offline-capable web apps with real-time updates. Ship one codebase to web, PWA and Android — no app store, no commission.</p>
-          <ul class="tags"><li>Service workers</li><li>Offline</li><li>Android</li><li>SSE</li></ul>
-        </article>
-        <article class="svc-row clickable reveal" data-popup="ai" tabindex="0" role="button">
-          <h3 data-i18n="services.ai.title">AI agents &amp; chatbots</h3>
-          <p data-i18n="services.ai.body">Customer-support and discovery chatbots, connected to your data via n8n workflows. Embeddable widgets that drop into any site in one line.</p>
-          <ul class="tags"><li>n8n</li><li>Chatbots</li><li>Embed widgets</li></ul>
-        </article>
-        <article class="svc-row clickable reveal" data-popup="bot" tabindex="0" role="button">
-          <h3 data-i18n="services.bot.title">Telegram bots &amp; automation</h3>
-          <p data-i18n="services.bot.body">Python bots and automation workflows that remove repetitive manual work — orders, notifications, reminders and back-office tasks.</p>
-          <ul class="tags"><li>Python</li><li>Telegram</li><li>Automation</li></ul>
-        </article>
-      </div>
-      <a id="callme" class="call-card reveal" href="tel:+989907470846" aria-label="Call Alireza: +98 990 747 0846">
-        <img src="img/call-alireza.webp" alt="Call Alireza — +98 9907470846" width="1340" height="784" loading="lazy" />
-        <span class="call-card-hint" data-i18n="call.hint">Tap to call</span>
-      </a>
-    </section>
-
-    <section id="work" class="section wrap">
-      <header class="sec-head reveal">
-        <h2 data-i18n="work.title">Featured work</h2>
-        <p data-i18n="work.sub">Real products, live and deployed — not just mockups.</p>
-      </header>
-
-      <article class="scene clickable reveal" data-popup="work-a" tabindex="0" role="button">
-        <div class="scene-media"><img src="img/homefood-home.png" alt="HomeFoodPro marketplace" loading="lazy" data-i18n-alt="gallery.a" /></div>
-        <div class="scene-txt">
-          <span class="badge live">PWA · Live</span>
-          <h3 data-i18n="work.a.title">HomeFoodPro — home-cooked food marketplace</h3>
-          <p data-i18n="work.a.body">Full marketplace connecting home cooks with customers. Real-time order tracking via SSE, dark mode, discount codes, live notifications, map routing and payments — shipped to web, PWA and Android from one codebase.</p>
-          <ul class="tags"><li>React · Vite</li><li>Express · SQLite</li><li>SSE</li><li>Zarinpal</li></ul>
-          <a class="text-link" href="https://homefoodpro.ir" target="_blank" rel="noopener" data-i18n="work.a.link">homefoodpro.ir →</a>
-        </div>
-      </article>
-
-      <article class="scene flip clickable reveal" data-popup="work-b" tabindex="0" role="button">
-        <div class="scene-media"><img src="img/ghablamoore.png" alt="Ghablamoore mascot widget" loading="lazy" data-i18n-alt="gallery.c" /></div>
-        <div class="scene-txt">
-          <span class="badge">AI Widget</span>
-          <h3 data-i18n="work.b.title">Ghablamoore — AI chat mascot widget</h3>
-          <p data-i18n="work.b.body">Zero-dependency floating mascot with physics, emotions and an AI chat brain. Drops into any website in one script tag, with an n8n agent backend and full accessibility support.</p>
-          <ul class="tags"><li>Vanilla JS</li><li>n8n</li><li>ARIA</li></ul>
-        </div>
-      </article>
-
-      <article class="scene clickable reveal" data-popup="work-c" tabindex="0" role="button">
-        <div class="scene-media"><img src="img/clue.png" alt="CLUE Specialty Coffee site" loading="lazy" data-i18n-alt="gallery.d" /></div>
-        <div class="scene-txt">
-          <span class="badge">UAE · RTL</span>
-          <h3 data-i18n="work.c.title">CLUE Specialty Coffee — UAE café site</h3>
-          <p data-i18n="work.c.body">Bilingual Arabic-RTL website concept for a Sharjah specialty café: interactive animations, digital menu, Google Maps integration, mobile-first and SEO-ready.</p>
-          <ul class="tags"><li>Arabic RTL</li><li>Mobile-first</li><li>SEO</li></ul>
-        </div>
-      </article>
-
-      <article class="scene clickable reveal" data-popup="work-d" tabindex="0" role="button">
-        <div class="scene-media"><img src="img/shop-store.jpg" alt="Digital shop — ready-made templates and tools" loading="lazy" /></div>
-        <div class="scene-txt">
-          <span class="badge live">Shop · Live</span>
-          <h3 data-i18n="work.d.title">Digital shop — ready-made templates &amp; tools</h3>
-          <p data-i18n="work.d.body">A digital storefront I built and stock myself: every product in it — templates, kits, prompt packs, small tools and trading-strategy packs — is my own work. Instant download, no middleman.</p>
-          <ul class="tags"><li>Templates</li><li>Prompt packs</li><li>Tools</li><li>Pine Script</li></ul>
-          <a class="text-link" href="https://homefoodpro.ir/dev/shop" target="_blank" rel="noopener" data-i18n="work.d.link">Visit the shop →</a>
-        </div>
-      </article>
-    </section>
-
-    <section id="gallery" class="section">
-      <header class="wrap sec-head reveal">
-        <h2 data-i18n="gallery.title">Inside the products</h2>
-        <p data-i18n="gallery.sub">Real screenshots from live projects — not stock photos.</p>
-      </header>
-      <div class="strip" role="list">
-        <figure class="strip-item clickable reveal" data-popup="shot-a" tabindex="0" role="button">
-          <img src="img/homefood-home.png" alt="HomeFoodPro home page" loading="lazy" data-i18n-alt="gallery.a" />
-          <figcaption data-i18n="gallery.a">HomeFoodPro — discovering home cooks near you</figcaption>
-        </figure>
-        <figure class="strip-item clickable reveal" data-popup="shot-b" tabindex="0" role="button">
-          <img src="img/homefood-track.png" alt="HomeFoodPro live order tracking" loading="lazy" data-i18n-alt="gallery.b" />
-          <figcaption data-i18n="gallery.b">Real-time order tracking with live status</figcaption>
-        </figure>
-        <figure class="strip-item clickable reveal" data-popup="shot-c" tabindex="0" role="button">
-          <img src="img/ghablamoore.png" alt="Ghablamoore chat mascot widget" loading="lazy" data-i18n-alt="gallery.c" />
-          <figcaption data-i18n="gallery.c">Ghablamoore — AI chat mascot on any site</figcaption>
-        </figure>
-        <figure class="strip-item clickable reveal" data-popup="shot-d" tabindex="0" role="button">
-          <img src="img/clue.png" alt="CLUE Specialty Coffee bilingual site" loading="lazy" data-i18n-alt="gallery.d" />
-          <figcaption data-i18n="gallery.d">CLUE Specialty Coffee — bilingual Arabic-RTL</figcaption>
-        </figure>
       </div>
     </section>
 
-    <section id="about" class="section wrap about">
-      <header class="sec-head reveal">
-        <h2 data-i18n="about.title">The developer behind the products</h2>
-        <p data-i18n="about.sub">I deliver the deployed product, not the mockup.</p>
-      </header>
-      <p class="about-lead reveal" data-i18n="about.p1">My work ends when it's running on your domain, on your customers' phones — not when the design looks nice in Figma. Every project I take ships: deployed, tested, and documented.</p>
-      <div class="about-grid">
-        <div class="reveal">
-          <p data-i18n="about.p2">I'm a full-stack engineer, so there's no hand-off gap between design, frontend, backend and deployment. That's how a single brief becomes a working marketplace, an AI widget or a running Telegram bot — without three different contractors.</p>
-          <dl class="facts">
-            <div><dt data-i18n="about.f1.t">Based in</dt><dd data-i18n="about.f1.b">Mashhad, Iran</dd></div>
-            <div><dt data-i18n="about.f2.t">Working hours</dt><dd data-i18n="about.f2.b">Overlap with EU &amp; Asia</dd></div>
-            <div><dt data-i18n="about.f3.t">Contact</dt><dd data-i18n="about.f3.b">Email, Telegram or LinkedIn</dd></div>
-            <div><dt data-i18n="about.f4.t">Speaks</dt><dd data-i18n="about.f4.b">FA · EN · AR</dd></div>
+    <!-- WORK -->
+    <section class="section" id="work" aria-labelledby="workTitle">
+      <div class="wrap">
+        <header class="sec-head">
+          <h2 id="workTitle" data-i18n="work.title">Selected work</h2>
+          <p data-i18n="work.sub">Everything here is live and in use. The flagship is a marketplace I designed, built and still run on my own.</p>
+        </header>
+
+        <article class="case" aria-labelledby="caseTitle">
+          <div class="case-top">
+            <div class="case-intro">
+              <p class="tagline"><span class="live-dot" aria-hidden="true"></span><span data-i18n="case.kind">Marketplace · in production</span></p>
+              <h3 id="caseTitle" data-i18n="case.title">HomeFoodPro — home-cooked food, ordered like takeaway</h3>
+              <p data-i18n="case.body">Customers order from home cooks and local shops nearby. Cooks run their kitchen from a panel, couriers are booked automatically, and money settles every night. I own all of it: product, design, code, servers and support.</p>
+              <div class="case-links">
+                <a class="btn btn-ink" href="https://homefoodpro.ir" target="_blank" rel="noopener" data-i18n="case.visit">Open homefoodpro.ir</a>
+                <a class="text-link" href="#log" data-i18n="case.log">What shipped recently</a>
+              </div>
+            </div>
+            <dl class="case-facts">
+              <div><dt data-i18n="case.f1t">Platforms</dt><dd data-i18n="case.f1">Web, installable PWA, Android app on Myket</dd></div>
+              <div><dt data-i18n="case.f2t">Stack</dt><dd>React · Vite · Express · SQLite · Capacitor</dd></div>
+              <div><dt data-i18n="case.f3t">Team</dt><dd data-i18n="case.f3">One developer — me</dd></div>
+            </dl>
+          </div>
+
+          <ul class="caps">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>
+              <h4 data-i18n="cap.1t">Live order tracking</h4>
+              <p data-i18n="cap.1">Status changes reach the customer and the cook the moment they happen, over Server-Sent Events. New orders ring a full-screen alert.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg>
+              <h4 data-i18n="cap.2t">Payments and nightly payouts</h4>
+              <p data-i18n="cap.2">Zibal gateway, an in-app wallet and a nightly settlement list for every cook. Cash orders only deduct the commission.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="17" r="2.5"/><circle cx="17.5" cy="17" r="2.5"/><path d="M9.5 17h5.5M4.5 17V9h8l2 4h4.5l1.5 2.5V17"/></svg>
+              <h4 data-i18n="cap.3t">Courier dispatch</h4>
+              <p data-i18n="cap.3">SnappBox price quotes and a background sync that moves orders to "delivering" and "delivered" on its own, with alerts on cancellations.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6z"/><path d="m8.8 12 2.3 2.3 4.3-4.6"/></svg>
+              <h4 data-i18n="cap.4t">Trust and safety</h4>
+              <p data-i18n="cap.4">Cook identity checks, a weighted trust score that drives ranking, and a moderation queue for photos and reviews.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+              <h4 data-i18n="cap.5t">Native Android app</h4>
+              <p data-i18n="cap.5">Built with Capacitor from the same code, published on Myket, with Firebase push and an adaptive themed icon.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l6 2.2M21 4l-3 16-9-6.8M21 4 9 13.2V19l3.2-3.2"/></svg>
+              <h4 data-i18n="cap.6t">Run from Telegram</h4>
+              <p data-i18n="cap.6">A bot sends admins new-order alerts, payout checklists and support tickets, so daily operations fit in one chat.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+              <h4 data-i18n="cap.7t">Built to be found</h4>
+              <p data-i18n="cap.7">Twelve city pages, dish guides, schema.org markup and llms.txt, so both search engines and AI assistants can cite it.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+              <h4 data-i18n="cap.8t">Encrypted bank details</h4>
+              <p data-i18n="cap.8">Cooks' IBANs are encrypted at rest with a separate master key. Third-party errors never leak to the client.</p>
+            </li>
+          </ul>
+        </article>
+
+        <div class="more-work">
+          <article class="work work-mascot">
+            <div class="work-media mascot-media">
+              <img src="img/ghablamoore.webp" alt="Ghablamoore, a round chat mascot sitting on a web page" data-i18n-alt="alt.mascot" loading="lazy">
+            </div>
+            <div class="work-txt">
+              <p class="tagline" data-i18n="w1.kind">Embeddable AI widget</p>
+              <h3 data-i18n="w1.title">Ghablamoore — a chat mascot for any website</h3>
+              <p data-i18n="w1.body">A floating mascot with real physics, moods and an AI brain behind it, served by an n8n agent with a local fallback. One script tag installs it; it respects the host site's colours, keyboard users and reduced motion.</p>
+              <ul class="tags"><li>Vanilla JS</li><li>n8n</li><li>ARIA</li><li>v8.4</li></ul>
+            </div>
+          </article>
+
+          <article class="work work-shop">
+            <div class="work-media">
+              <img src="img/shop-store.webp" alt="The digital shop storefront with templates and tools" data-i18n-alt="alt.shop" loading="lazy">
+            </div>
+            <div class="work-txt">
+              <p class="tagline" data-i18n="w2.kind">Digital store · live</p>
+              <h3 data-i18n="w2.title">A shop for my own templates and tools</h3>
+              <p data-i18n="w2.body">Templates, prompt packs, small tools and Pine Script strategy packs, all made by me. Pays by card through Zibal or by crypto on Base; every download is a signed link that expires after 24 hours.</p>
+              <a class="text-link" href="https://homefoodpro.ir/dev/shop" data-i18n="w2.link">Browse the shop</a>
+            </div>
+          </article>
+
+          <article class="work work-clue">
+            <div class="work-media">
+              <img src="img/clue.webp" alt="CLUE Specialty Coffee website in Arabic" data-i18n-alt="alt.clue" loading="lazy">
+            </div>
+            <div class="work-txt">
+              <p class="tagline" data-i18n="w3.kind">Website · Sharjah, UAE</p>
+              <h3 data-i18n="w3.title">CLUE Specialty Coffee</h3>
+              <p data-i18n="w3.body">A bilingual Arabic-first café site with a digital menu, map directions and motion that stays out of the way. Mobile-first and set up for local search.</p>
+              <ul class="tags"><li>Arabic RTL</li><li>Mobile-first</li><li>Local SEO</li></ul>
+            </div>
+          </article>
+
+          <article class="work work-video">
+            <div class="work-media reel" aria-hidden="true">
+              <div class="reel-frames"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <code>render.js → stage.html → ffmpeg</code>
+            </div>
+            <div class="work-txt">
+              <p class="tagline" data-i18n="w4.kind">Automation · video</p>
+              <h3 data-i18n="w4.title">Promo videos rendered from code</h3>
+              <p data-i18n="w4.body">An HTML stage animated in a headless browser, captured frame by frame and encoded with FFmpeg and a soundtrack. A new ad video is an edit and a command, not a week of editing.</p>
+              <ul class="tags"><li>Node.js</li><li>Puppeteer</li><li>FFmpeg</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHIPPING LOG -->
+    <section class="section log-sec" id="log" aria-labelledby="logTitle">
+      <div class="wrap log-grid">
+        <header class="sec-head log-head">
+          <h2 id="logTitle" data-i18n="log.title">Shipping log</h2>
+          <p data-i18n="log.sub">What went live on HomeFoodPro in the last three weeks. This is how I work on your product too: small releases, every few days, in production.</p>
+          <p class="log-count"><strong>102</strong> <span data-i18n="log.count">commits since 24 September</span></p>
+        </header>
+        <ol class="log">
+          <li><time datetime="2026-10-17" data-i18n="d.oct17">Oct 17</time><div><h3 data-i18n="l.1t">A new homepage</h3><p data-i18n="l.1">Meal-time hero, a dish rail, a comparison table and a light/dark switch with a circular reveal.</p></div></li>
+          <li><time datetime="2026-10-15" data-i18n="d.oct15">Oct 15</time><div><h3 data-i18n="l.2t">Daily payouts for every cook</h3><p data-i18n="l.2">A nightly settlement list timed to the bank cutoff, plus a Telegram checklist for admins.</p></div></li>
+          <li><time datetime="2026-10-15" data-i18n="d.oct15">Oct 15</time><div><h3 data-i18n="l.3t">Push that can't be missed</h3><p data-i18n="l.3">Native Android push via Firebase, and a full-screen ringing alert when a new order arrives.</p></div></li>
+          <li><time datetime="2026-10-15" data-i18n="d.oct15">Oct 15</time><div><h3 data-i18n="l.4t">Couriers that update themselves</h3><p data-i18n="l.4">SnappBox status syncs in the background; cooks can also deliver themselves or refund.</p></div></li>
+          <li><time datetime="2026-10-15" data-i18n="d.oct15">Oct 15</time><div><h3 data-i18n="l.5t">One-step vendor sign-up</h3><p data-i18n="l.5">Name, address, pin on the map — identity checks come later, after admin review.</p></div></li>
+          <li><time datetime="2026-10-14" data-i18n="d.oct14">Oct 14</time><div><h3 data-i18n="l.6t">Ghablamoore 8.4</h3><p data-i18n="l.6">The mascot and chat box redesigned on the HomeFood design system.</p></div></li>
+          <li><time datetime="2026-10-13" data-i18n="d.oct13">Oct 13</time><div><h3 data-i18n="l.7t">Twelve city pages</h3><p data-i18n="l.7">Programmatic SEO with schema, a sitemap and llms.txt, linked to dish guides.</p></div></li>
+          <li><time datetime="2026-10-13" data-i18n="d.oct13">Oct 13</time><div><h3 data-i18n="l.8t">Readable for everyone</h3><p data-i18n="l.8">Adjustable interface size and a high-contrast mode after a full accessibility pass.</p></div></li>
+          <li><time datetime="2026-10-01" data-i18n="d.oct01">Oct 1</time><div><h3 data-i18n="l.9t">Smart picks</h3><p data-i18n="l.9">A weighted ranking engine for cooks, and Web Push for everyone.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services" aria-labelledby="svcTitle">
+      <div class="wrap">
+        <header class="sec-head">
+          <h2 id="svcTitle" data-i18n="svc.title">What I can build for you</h2>
+          <p data-i18n="svc.sub">Four kinds of work, one standard: it ships, it's documented, and it runs on your domain.</p>
+        </header>
+        <div class="svc">
+          <details class="svc-item" open>
+            <summary>
+              <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9h18M6.5 6.8h.01M9 6.8h.01"/></svg></span>
+              <span class="svc-name"><span data-i18n="svc.1t">Websites</span><small data-i18n="svc.1s">Business sites, landing pages, WordPress</small></span>
+              <span class="svc-time" data-i18n="svc.1d">1–3 weeks</span>
+            </summary>
+            <div class="svc-body">
+              <p data-i18n="svc.1">A site that brings in customers, not a digital business card.</p>
+              <ul>
+                <li data-i18n="svc.1a">WordPress or custom-coded, whichever fits your budget and team</li>
+                <li data-i18n="svc.1b">Mobile-first, tested on real phones</li>
+                <li data-i18n="svc.1c">Persian, English and Arabic with correct fonts and direction</li>
+                <li data-i18n="svc.1d2">Search setup: meta tags, schema, sitemap, fast load times</li>
+                <li data-i18n="svc.1e">Speed fixes and redesigns for existing sites</li>
+              </ul>
+            </div>
+          </details>
+          <details class="svc-item">
+            <summary>
+              <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3M12 7v6m-2.5-2.5L12 13l2.5-2.5"/></svg></span>
+              <span class="svc-name"><span data-i18n="svc.2t">Web apps and PWAs</span><small data-i18n="svc.2s">Installable, offline-ready, live updates</small></span>
+              <span class="svc-time" data-i18n="svc.2d">2–5 weeks</span>
+            </summary>
+            <div class="svc-body">
+              <p data-i18n="svc.2">One codebase for web, home-screen app and Android. No app store commission, no second team.</p>
+              <ul>
+                <li data-i18n="svc.2a">Installable on Android, iPhone and desktop</li>
+                <li data-i18n="svc.2b">Works offline with a service worker</li>
+                <li data-i18n="svc.2c">Live updates without refreshing the page</li>
+                <li data-i18n="svc.2d2">Push notifications, payments, maps, dashboards</li>
+                <li data-i18n="svc.2e">Android build with Capacitor when you need a store listing</li>
+              </ul>
+            </div>
+          </details>
+          <details class="svc-item">
+            <summary>
+              <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 17.5 3.5 21l4-1.5A9 9 0 1 0 5 17.5z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg></span>
+              <span class="svc-name"><span data-i18n="svc.3t">AI agents and chatbots</span><small data-i18n="svc.3s">Support, sales and search, on your data</small></span>
+              <span class="svc-time" data-i18n="svc.3d">1–3 weeks</span>
+            </summary>
+            <div class="svc-body">
+              <p data-i18n="svc.3">A chatbot that knows your business and hands over to a person when it should.</p>
+              <ul>
+                <li data-i18n="svc.3a">Connected to your products, orders or documents through n8n</li>
+                <li data-i18n="svc.3b">Embeds in any site with one script tag</li>
+                <li data-i18n="svc.3c">Persian, English and Arabic conversations</li>
+                <li data-i18n="svc.3d2">Clean handoff to a human, and a fallback when the model is down</li>
+              </ul>
+            </div>
+          </details>
+          <details class="svc-item">
+            <summary>
+              <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 4 3 11l6 2.2M21 4l-3 16-9-6.8M21 4 9 13.2V19l3.2-3.2"/></svg></span>
+              <span class="svc-name"><span data-i18n="svc.4t">Telegram bots and automation</span><small data-i18n="svc.4s">Orders, alerts, reminders, back office</small></span>
+              <span class="svc-time" data-i18n="svc.4d">3–10 days</span>
+            </summary>
+            <div class="svc-body">
+              <p data-i18n="svc.4">Stop paying people to do a machine's job. Bots that run the repetitive work around the clock.</p>
+              <ul>
+                <li data-i18n="svc.4a">Order-taking, reminder and notification bots</li>
+                <li data-i18n="svc.4b">Every order or lead logged to your sheet or CRM</li>
+                <li data-i18n="svc.4c">Admin panels inside the bot itself</li>
+                <li data-i18n="svc.4d2">Runs on a small server for almost nothing</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="process" aria-labelledby="procTitle">
+      <div class="wrap">
+        <header class="sec-head">
+          <h2 id="procTitle" data-i18n="proc.title">How a project runs</h2>
+          <p data-i18n="proc.sub">Fixed scope, short cycles, and a staging link you can open any time.</p>
+        </header>
+        <ol class="steps">
+          <li><h3 data-i18n="proc.1t">Talk</h3><p data-i18n="proc.1">We go through your business, your users and what success looks like. You get a written scope and a fixed price.</p></li>
+          <li><h3 data-i18n="proc.2t">Design</h3><p data-i18n="proc.2">Wireframes, then the visual design, then your feedback — before a line of production code.</p></li>
+          <li><h3 data-i18n="proc.3t">Build</h3><p data-i18n="proc.3">Releases every few days on a staging link, so you see real progress instead of status reports.</p></li>
+          <li><h3 data-i18n="proc.4t">Launch and hand over</h3><p data-i18n="proc.4">Deployed to your domain, with documentation and free bug fixes after launch.</p></li>
+        </ol>
+
+        <div class="stack" aria-labelledby="stackTitle">
+          <h3 id="stackTitle" data-i18n="stack.title">Tools I ship with</h3>
+          <dl>
+            <div><dt data-i18n="stack.front">Frontend</dt><dd>React, Vite, TypeScript, service workers, Leaflet</dd></div>
+            <div><dt data-i18n="stack.back">Backend</dt><dd>Node.js, Express, SQLite, Python, SSE</dd></div>
+            <div><dt data-i18n="stack.ai">AI and automation</dt><dd>n8n, LLM agents, Telegram Bot API, Puppeteer</dd></div>
+            <div><dt data-i18n="stack.mobile">Mobile</dt><dd>PWA, Capacitor, Android, Firebase Cloud Messaging</dd></div>
+            <div><dt data-i18n="stack.ops">Infrastructure</dt><dd>Linux, Nginx, Docker, Runflare, GitHub</dd></div>
+            <div><dt data-i18n="stack.pay">Payments</dt><dd>Zibal, Zarinpal, USDT, crypto on Base</dd></div>
           </dl>
         </div>
-        <div class="reveal">
-          <p class="stack-t" data-i18n="about.stack">Stack I ship with</p>
-          <dl class="stack">
-            <div><dt data-i18n="stack.front">Frontend</dt><dd>React · Vite · TypeScript · PWA · Service Workers</dd></div>
-            <div><dt data-i18n="stack.back">Backend</dt><dd>Node.js · Express · SQLite · Python</dd></div>
-            <div><dt data-i18n="stack.ai">AI &amp; automation</dt><dd>n8n · AI agents · Chatbots</dd></div>
-            <div><dt data-i18n="stack.mobile">Mobile</dt><dd>PWA · Capacitor · Android</dd></div>
-            <div><dt data-i18n="stack.cms">CMS</dt><dd>WordPress · Headless CMS</dd></div>
-            <div><dt data-i18n="stack.ops">DevOps</dt><dd>Linux · Nginx · Docker · VPS</dd></div>
-          </dl>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faqTitle">
+      <div class="wrap faq-grid">
+        <header class="sec-head">
+          <h2 id="faqTitle" data-i18n="faq.title">Questions clients ask</h2>
+          <p data-i18n="faq.sub">If yours isn't here, send it on Telegram.</p>
+        </header>
+        <div class="faq">
+          <details><summary data-i18n="faq.q1">How much does a project cost?</summary><p data-i18n="faq.a1">It depends on scope, so there's no price list. After a short call you get a fixed price in writing — no hourly surprises.</p></details>
+          <details><summary data-i18n="faq.q2">How long does it take?</summary><p data-i18n="faq.a2">Websites take 1–3 weeks, web apps 2–5 weeks, bots 3–10 days. I take one or two projects at a time, so the date I give is the date you get.</p></details>
+          <details><summary data-i18n="faq.q3">Do you work with clients outside Iran?</summary><p data-i18n="faq.a3">Yes. I work remotely, my hours overlap with Europe, the Gulf and East Asia, and international clients usually pay in USDT.</p></details>
+          <details><summary data-i18n="faq.q4">Do you do both design and code?</summary><p data-i18n="faq.a4">Yes, from wireframe to deployment. If you already have a designer or a brand guide, I build to it exactly.</p></details>
+          <details><summary data-i18n="faq.q5">What happens after launch?</summary><p data-i18n="faq.a5">You get handover documentation, and bug fixes are free. If you want to keep going, we continue release by release.</p></details>
+          <details><summary data-i18n="faq.q6">I'm not sure what I need. Where do I start?</summary><p data-i18n="faq.a6">Tell me the problem and the result you want. I'll suggest what the first version should include and what can wait.</p></details>
         </div>
       </div>
     </section>
 
-    <section id="process" class="section wrap">
-      <header class="sec-head reveal">
-        <h2 data-i18n="process.title">How it works</h2>
-        <p data-i18n="process.sub">Transparent, fixed-scope sprints. You always know what you're paying for.</p>
-      </header>
-      <ol class="steps">
-        <li class="reveal"><h3 data-i18n="process.s1.t">Discovery</h3><p data-i18n="process.s1.b">We talk about your business, goals and scope, then agree on a plan together.</p></li>
-        <li class="reveal"><h3 data-i18n="process.s2.t">Design</h3><p data-i18n="process.s2.b">Wireframe → visual design → your feedback, until it's exactly right.</p></li>
-        <li class="reveal"><h3 data-i18n="process.s3.t">Build</h3><p data-i18n="process.s3.b">Weekly demos, clean tested code on a staging link you can check anytime.</p></li>
-        <li class="reveal"><h3 data-i18n="process.s4.t">Launch</h3><p data-i18n="process.s4.b">Deploy to your domain, handover docs, and free bug support afterwards.</p></li>
-      </ol>
-    </section>
-
-    <section id="faq" class="section wrap">
-      <header class="sec-head reveal">
-        <h2 data-i18n="faq.title">Questions clients ask</h2>
-        <p data-i18n="faq.sub">Short answers. If yours isn't here, message me.</p>
-      </header>
-      <div class="faq">
-        <details class="reveal" open>
-          <summary data-i18n="faq.q1">How much does a project cost?</summary>
-          <p data-i18n="faq.a1">Cost depends on scope, so there is no single price. Tell me what you need and we agree on a plan together.</p>
-        </details>
-        <details class="reveal">
-          <summary data-i18n="faq.q2">How long does it take?</summary>
-          <p data-i18n="faq.a2">WordPress/landing sites: 1–3 weeks. PWA web apps: 2–5 weeks. Telegram bots and automation: 3–10 days. I only take one or two projects at a time, so the schedule I give you is the schedule you get.</p>
-        </details>
-        <details class="reveal">
-          <summary data-i18n="faq.q3">Do you work with clients outside Iran?</summary>
-          <p data-i18n="faq.a3">Yes — I work remotely worldwide. International clients pay with USDT (crypto), which is fast and reliable from anywhere. My hours overlap with both Europe and East Asia.</p>
-        </details>
-        <details class="reveal">
-          <summary data-i18n="faq.q4">Can you handle both design and code?</summary>
-          <p data-i18n="faq.a4">Yes, one person from wireframe to deployment. If you already have a designer or a brand kit, I build to it exactly.</p>
-        </details>
-        <details class="reveal">
-          <summary data-i18n="faq.q5">What happens after launch?</summary>
-          <p data-i18n="faq.a5">Every project ships with handover documentation, and bug fixes after launch are free. If you want ongoing work, I keep the staging link live and we continue sprint by sprint.</p>
-        </details>
-        <details class="reveal">
-          <summary data-i18n="faq.q6">What if I don't know what I need?</summary>
-          <p data-i18n="faq.a6">That's the normal starting point. Tell me the business problem and the outcome you want; I'll propose the shape of the product, what it should include, and what can wait for version two.</p>
-        </details>
-      </div>
-    </section>
-
-    <section id="contact" class="cta">
-      <div class="wrap cta-in">
-        <h2 class="reveal" data-i18n="cta.title">Let's build your product</h2>
-        <p class="reveal" data-i18n="cta.body">Tell me what you need, in Persian, English or Arabic, and we will agree on scope and timing.</p>
-        <div class="cta-links reveal">
-          <a class="btn btn-dark" id="mailBtn" href="mailto:alimb5554@gmail.com?subject=New%20project%20inquiry"><span data-i18n="cta.email">Email me</span></a>
-          <a class="btn btn-line-light" href="https://t.me/alirha82" target="_blank" rel="noopener"><span data-i18n="cta.telegram">Chat on Telegram</span></a>
-          <a class="btn btn-line-light" href="https://linkedin.com/in/alirha82" target="_blank" rel="noopener"><span data-i18n="cta.linkedin">Message on LinkedIn</span></a>
-          <a class="btn btn-line-light" href="tel:+989907470846"><span data-i18n="cta.phone">Call / WhatsApp</span></a>
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <h2 id="contactTitle" data-i18n="c.title">Tell me what you want to build</h2>
+          <p data-i18n="c.body">Answer three questions and I'll reply within one working day with a scope, a timeline and a fixed price — in Persian, English or Arabic.</p>
+          <ul class="channels">
+            <li><a href="https://t.me/alirha82" target="_blank" rel="noopener"><span data-i18n="c.tg">Telegram</span><span class="ch-val" dir="ltr">@alirha82</span></a></li>
+            <li><a href="mailto:alimb5554@gmail.com"><span data-i18n="c.mail">Email</span><span class="ch-val" dir="ltr">alimb5554@gmail.com</span></a><button class="copy" type="button" id="copyMail" data-i18n="c.copy">Copy</button></li>
+            <li><a href="https://linkedin.com/in/alirha82" target="_blank" rel="noopener"><span>LinkedIn</span><span class="ch-val" dir="ltr">in/alirha82</span></a></li>
+            <li id="callme"><a href="tel:+989907470846"><span data-i18n="c.phone">Phone / WhatsApp</span><span class="ch-val" dir="ltr">+98 990 747 0846</span></a></li>
+          </ul>
         </div>
-        <p class="cta-note" data-i18n="cta.note">Remote worldwide · Mashhad, Iran</p>
+
+        <form class="brief" id="brief" novalidate>
+          <fieldset>
+            <legend data-i18n="f.type">What do you need?</legend>
+            <div class="chips">
+              <label><input type="radio" name="type" value="web" required><span data-i18n="f.web">Website</span></label>
+              <label><input type="radio" name="type" value="pwa"><span data-i18n="f.pwa">Web app / PWA</span></label>
+              <label><input type="radio" name="type" value="ai"><span data-i18n="f.ai">AI chatbot</span></label>
+              <label><input type="radio" name="type" value="bot"><span data-i18n="f.bot">Telegram bot</span></label>
+              <label><input type="radio" name="type" value="other"><span data-i18n="f.other">Something else</span></label>
+            </div>
+          </fieldset>
+          <label class="field">
+            <span data-i18n="f.desc">What should it do?</span>
+            <textarea name="desc" rows="4" required placeholder="The problem, who uses it, any site you like…" data-i18n-ph="f.desc_ph"></textarea>
+          </label>
+          <div class="row">
+            <label class="field">
+              <span data-i18n="f.when">When do you need it?</span>
+              <select name="when">
+                <option value="asap" data-i18n="f.w1">As soon as possible</option>
+                <option value="month" selected data-i18n="f.w2">Within a month</option>
+                <option value="later" data-i18n="f.w3">In two months or more</option>
+                <option value="flex" data-i18n="f.w4">Flexible</option>
+              </select>
+            </label>
+            <fieldset class="field">
+              <legend data-i18n="f.via">Send it via</legend>
+              <div class="seg">
+                <label><input type="radio" name="via" value="telegram" checked><span>Telegram</span></label>
+                <label><input type="radio" name="via" value="email"><span data-i18n="c.mail">Email</span></label>
+              </div>
+            </fieldset>
+          </div>
+          <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+          <button class="btn btn-lapis btn-lg btn-block" type="submit" data-i18n="f.send">Send my brief</button>
+          <p class="fine" data-i18n="f.fine">Opens Telegram or your email app with the message filled in. Nothing is stored on this site.</p>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="foot">
     <div class="wrap foot-in">
-      <p>© <span id="year"></span> Alireza HA</p>
-      <p class="foot-note" data-i18n="footer.made">This site is itself a PWA — installable &amp; offline-ready.</p>
-      <button class="foot-copy" id="copyMailBtn" data-i18n="cta.copy">Copy email</button>
-      <a class="foot-mail" href="mailto:alimb5554@gmail.com">alimb5554@gmail.com</a>
-      <a class="foot-link" href="https://homefoodpro.ir" target="_blank" rel="noopener" data-i18n="footer.main">← Back to HomeFoodPro</a>
+      <p>© <span id="year">2026</span> Alireza HA · <span data-i18n="foot.city">Mashhad, Iran</span></p>
+      <nav aria-label="Footer">
+        <a href="https://homefoodpro.ir/dev/shop" data-i18n="nav.shop">Shop</a>
+        <a href="https://homefoodpro.ir" target="_blank" rel="noopener">HomeFoodPro</a>
+        <a href="https://github.com/cactus1382" target="_blank" rel="noopener">GitHub</a>
+        <button type="button" id="installBtn" class="linklike" hidden data-i18n="foot.install">Install this page as an app</button>
+      </nav>
     </div>
   </footer>
 
-  <div class="fab" id="fab" hidden>
-    <a class="fab-btn fab-tg" href="https://t.me/alirha82" target="_blank" rel="noopener" aria-label="Telegram">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9L18.3 6.4c.4-.4-.1-.6-.6-.2L7.7 13.5l-4.7-1.5c-1-.3-1-1 .2-1.5L20.6 3c.8-.3 1.6.2 1.3 1.3z" fill="currentColor"/></svg>
-    </a>
-    <button class="fab-btn fab-mail" id="fabMail" aria-label="Email">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm.9 2 8.1 6 8.1-6H3.9z" fill="currentColor"/></svg>
-    </button>
-    <button class="fab-btn fab-top" id="fabTop" aria-label="Back to top">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a1 1 0 0 1 .7.3l7 7-1.4 1.4L13 7.4V20h-2V7.4l-5.3 5.3-1.4-1.4 7-7A1 1 0 0 1 12 4z" fill="currentColor"/></svg>
-    </button>
-  </div>
-
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-panel">
-      <button class="modal-close" data-close data-i18n-aria="a11y.close" aria-label="Close">×</button>
-      <div class="modal-body" id="modalBody"></div>
-    </div>
-  </div>
-
-  <aside class="consent" id="consent" role="dialog" aria-live="polite" aria-labelledby="consentQ" hidden>
-    <div class="consent-glass">
-      <img class="consent-img" src="img/cookie.png" alt="" width="800" height="800" loading="lazy" />
-      <div class="consent-text">
-        <p class="consent-q" id="consentQ" data-i18n="consent.q">Care for a cookie?</p>
-        <p class="consent-info" id="consentInfo" data-i18n="consent.info">Only used to remember your language and theme.</p>
-      </div>
-      <div class="consent-actions">
-        <button class="btn btn-primary" id="consentYes" data-i18n="consent.yes">Yes, bring it</button>
-        <button class="btn btn-line" id="consentNo" data-i18n="consent.no">No thanks</button>
-      </div>
-    </div>
-  </aside>
+  <a class="fab" id="fab" href="#contact" data-i18n="nav.cta">Start a project</a>
   <script src="app.js" defer></script>
 </body>
 </html>

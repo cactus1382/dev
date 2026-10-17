@@ -1,4 +1,4 @@
-const CACHE = "ali-dev-v5-5";
+const CACHE = "ali-dev-v6";
 const SCOPE_PATH = new URL("./", self.location).pathname;
 
 const PRECACHE = [
@@ -11,10 +11,11 @@ const PRECACHE = [
   "./og.png",
   "./icon-192.png",
   "./icon-512.png",
-  "./img/homefood-home.png",
-  "./img/homefood-track.png",
-  "./img/ghablamoore.png",
-  "./img/clue.png",
+  "./img/homefood-home.webp",
+  "./img/homefood-track.webp",
+  "./img/ghablamoore.webp",
+  "./img/clue.webp",
+  "./img/shop-store.webp",
   "./fonts/vazirmatn-latin-400-normal.woff2",
   "./fonts/vazirmatn-latin-700-normal.woff2",
   "./fonts/vazirmatn-latin-800-normal.woff2",
