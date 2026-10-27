@@ -1,4 +1,4 @@
-const CACHE = "ali-dev-v8";
+const CACHE = "ali-dev-v9";
 const SCOPE_PATH = new URL("./", self.location).pathname;
 
 const PRECACHE = [
@@ -8,23 +8,21 @@ const PRECACHE = [
   "./app.js",
   "./manifest.json",
   "./favicon.svg",
-  "./og.png",
+  "./og.jpg",
   "./icon-192.png",
   "./icon-512.png",
   "./img/homefood-home.webp",
-  "./img/homefood-track.webp",
-  "./img/ghablamoore.webp",
-  "./img/clue.webp",
   "./img/shop-store.webp",
   "./img/exir-store.webp",
+  "./img/bazaar-hero.webp",
+  "./img/bazaar-hero-960.webp",
+  "./img/ghablamoore-mascot.webp",
+  "./fonts/lalezar-arabic.woff2",
+  "./fonts/lalezar-latin.woff2",
   "./fonts/vazirmatn-latin-400-normal.woff2",
   "./fonts/vazirmatn-latin-700-normal.woff2",
-  "./fonts/vazirmatn-latin-800-normal.woff2",
   "./fonts/vazirmatn-arabic-400-normal.woff2",
   "./fonts/vazirmatn-arabic-700-normal.woff2",
-  "./fonts/vazirmatn-arabic-800-normal.woff2",
-  "./fonts/space-grotesk-latin-500-normal.woff2",
-  "./fonts/space-grotesk-latin-700-normal.woff2"
 ];
 
 self.addEventListener("install", event => {
