@@ -193,6 +193,7 @@ html[lang="fa"] .case-intro h3{line-height:1.45}
 /* more work — asymmetric */
 .more-work{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(20px,3vw,32px);margin-top:clamp(20px,3vw,32px)}
 .work{display:flex;flex-direction:column;gap:22px;padding:clamp(18px,2.4vw,26px);border-radius:var(--r-lg);border:1px solid var(--line);background:var(--surface)}
+.work-exir{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center;gap:clamp(20px,3vw,40px)}
 .work-shop{grid-column:span 7}
 .work-mascot{grid-column:span 5}
 .work-clue{grid-column:span 5}
@@ -209,7 +210,7 @@ html[lang="fa"] .case-intro h3{line-height:1.45}
 .reel-frames span{aspect-ratio:9/16;border-radius:8px;background:linear-gradient(160deg,#2b47d6,#0b8a83 60%,#f1b64a);opacity:.35}
 .reel-frames span:nth-child(2){opacity:.5}.reel-frames span:nth-child(3){opacity:.7}.reel-frames span:nth-child(4){opacity:1;outline:2px solid #f1b64a;outline-offset:3px}.reel-frames span:nth-child(5){opacity:.55}.reel-frames span:nth-child(6){opacity:.35}
 .reel code{position:absolute;bottom:14px;inset-inline-start:16px;font-size:.78rem;opacity:.85;direction:ltr}
-@media (max-width:860px){.work-shop,.work-mascot,.work-clue,.work-video{grid-column:1/-1}}
+@media (max-width:860px){.work-exir{grid-template-columns:1fr}.work-shop,.work-mascot,.work-clue,.work-video{grid-column:1/-1}}
 
 /* ---------- shipping log (inverted band) ---------- */
 .log-sec{background:var(--band);color:var(--band-ink)}
