@@ -1,4 +1,4 @@
-/* Alireza HA — portfolio v9 "Bazaar". Persian text lives in index.html; English overrides below (?lang=en). */
+/* Alireza HA — portfolio v10 "Bazaar". Persian text lives in index.html; English overrides below (?lang=en). */
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const root = document.documentElement;
 const store = {
@@ -12,11 +12,15 @@ const EN = {
   "theme": "Switch light and dark theme",
   "hero.title": "I build your stall in the online bazaar.",
   "hero.lead": "Websites, online stores, apps and Telegram bots. Design, code, servers, payments and support all sit with one person, so work moves fast and nothing gets lost between people.",
-  "cta.main": "Describe your project", "cta.work": "See the live work",
-  "alt.hero": "A small bazaar with turquoise domes and four stalls: a kitchen, an apothecary, a desk of laptops and a cooking-pot mascot",
-  "st.hf": "HomeFood", "st.exir": "Exir store", "st.shop": "Digital shop", "st.gm": "Ghablamoore",
-  "work.title": "These four stalls are open right now",
-  "work.sub": "Each one is a real product with real users. Open the link and try it yourself.",
+  "cta.main": "Describe your project", "cta.work": "See the live work", "cta.call": "Call me",
+  "alt.hero": "A small bazaar of three domed stalls: a kitchen, an apothecary and a desk of laptops; a red cooking pot sits at the kitchen door, waving",
+  "st.hf": "HomeFood", "st.exir": "Exir store", "st.shop": "Digital shop", "st.gm": "Ghablamoore, HomeFood's assistant",
+  "deal.title": "Hand me your website and this is what you get",
+  "deal.t1": "What you get", "deal.p1": "A working website or app with payments and an admin panel. The code, domain and server are in your name.",
+  "deal.t2": "How long it takes", "deal.p2": "A simple site usually takes 1–2 weeks, an online store 3–6 weeks. The timeline is written down before we start.",
+  "deal.t3": "How to start", "deal.p3": "One message or one call. Within one working day I send the scope, timeline and a fixed price.",
+  "work.title": "These three stalls are open right now",
+  "work.sub": "I built all three myself, from design to server, and they are live. Open the link and try it yourself.",
   "f.where": "Where", "f.inside": "Inside", "f.stack": "Built with",
   "alt.hf": "HomeFood app home screen on a phone",
   "p1.title": "HomeFood", "p1.what": "An online marketplace for home cooking and neighbourhood kitchens in Mashhad",
@@ -24,6 +28,7 @@ const EN = {
   "p1.where": "Web, installable app, Android app on Myket",
   "p1.inside": "Zibal payments and wallet, SnappBox couriers, admin from Telegram",
   "p1.link": "Open homefoodpro.ir",
+  "p1.gm_t": "Ghablamoore, HomeFood's assistant", "p1.gm": "Sits at the stall door and answers customers' and cooks' questions. One line of code installs it on any website.",
   "alt.exir": "Exir online store homepage",
   "p2.title": "Exir store", "p2.what": "An online store for natural, beauty and health products",
   "p2.body": "377 products in 8 categories, with search, brand pages, cart, checkout and order tracking. Pages are rendered on the server so they open fast and Google reads all of them.",
@@ -35,9 +40,8 @@ const EN = {
   "p3.body": "Pay by bank card or crypto. Every purchase gets a signed download link that expires after 24 hours, so files don't get passed around.",
   "p3.inside": "Zibal gateway, payment on the Base network, signed download links",
   "p3.link": "Enter the shop",
-  "alt.gm": "Ghablamoore, a red cooking-pot mascot",
-  "p4.title": "Ghablamoore", "p4.what": "An AI chat mascot for any website",
-  "p4.body": "A floating character with moods and motion, with an AI agent behind it answering customers' questions. One line of code installs it on any site, and it picks up that site's colours.",
+  
+  "alt.gm": "Ghablamoore, the red cooking pot that is HomeFood's assistant",
   "more.aria": "Other work",
   "p5.title": "CLUE café", "p5.where": "Sharjah, UAE",
   "p5.body": "A bilingual Arabic and English site with a digital menu, map directions and local-search setup.",
@@ -66,8 +70,8 @@ const EN = {
   "q4": "Do you support it after launch?", "a4": "Yes. Fixes after launch are included, and a monthly agreement is available for further work.",
   "q5": "Do you work with clients outside Iran?", "a5": "Yes, in Persian, English and Arabic, fully remote; the CLUE café site in Sharjah is one of them.",
   "c.title": "What should your stall look like?",
-  "c.body": "Answer three questions and within one working day I'll reply with the scope, timeline and a fixed price.",
-  "c.tg": "Telegram", "c.phone": "Phone and WhatsApp", "c.mail": "Email",
+  "c.body": "Answer three questions and within one working day I'll reply with the scope, timeline and a fixed price. If talking is easier, call now or message me on Telegram.",
+  "c.tg": "Telegram", "c.phone": "Phone and WhatsApp", "c.mail": "Email", "c.call": "Call", "c.tgmsg": "Message on Telegram",
   "f.type": "What do you need?", "f.store": "Online store", "f.web": "Website", "f.app": "Web app or Android app",
   "f.ai": "Chatbot", "f.bot": "Telegram bot", "f.other": "Something else",
   "f.desc": "What should it do?", "f.desc_ph": "The problem it solves, who uses it, a site you like",
@@ -142,6 +146,18 @@ form.addEventListener("submit", e => {
     say(t.okTg, "ok");
   }
 });
+
+/* ---------- phone dock: shows after the hero, hides at the contact form ---------- */
+const dock = $("#dock");
+if (dock && "IntersectionObserver" in window) {
+  const seen = { hero: true, contact: false };
+  const sync = () => { const on = !seen.hero && !seen.contact; dock.classList.toggle("show", on); dock.inert = !on; };
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { seen[e.target.id === "contact" ? "contact" : "hero"] = e.isIntersecting; });
+    sync();
+  });
+  io.observe($(".hero")); io.observe($("#contact"));
+}
 
 if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
 $("#year").textContent = new Date().getFullYear();
